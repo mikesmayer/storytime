@@ -1,5 +1,6 @@
-.custom-field-group{
-  margin-bottom: 15px;
+.custom-field-inputs{
   input[type='text'], select, label{ margin-right: 12px; }
   input[type='checkbox']{ margin-right: 5px; }
+
+  .row{ margin-bottom: 15px; }
 }

@@ -3,7 +3,9 @@ module Storytime
     belongs_to :post_type
     has_many :custom_field_responses
 
-    TYPES = %w{TextField}
+    TYPES = %w{TextField SelectField}
+
+    #validates :type, inclusion: { in: type_classes }
 
     def self.type_classes
       TYPES.map{|type| "Storytime::CustomFields::#{type}" }
