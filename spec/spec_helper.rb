@@ -23,12 +23,12 @@ Capybara.javascript_driver = :poltergeist_st
 
 RSpec.configure do |config|
 
-  # config.before(:all) do
-  #   if self.respond_to? :visit
-  #     visit '/assets/application.css'
-  #     visit '/assets/application.js'
-  #   end
-  # end
+  config.before(:all, type: :feature) do
+    if self.respond_to? :visit
+      visit '/assets/application.css'
+      visit '/assets/application.js'
+    end
+  end
 
   config.before(:each) do
     Storytime::Role.seed
