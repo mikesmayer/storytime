@@ -3,25 +3,18 @@ require 'spec_helper'
 describe "In the dashboard, Media" do
   include Storytime::Dashboard::MediaHelper
 
-  # needed because our wysiwyg text area is hidden
-  def wait_until
-    require "timeout"
-    Timeout.timeout(Capybara.default_wait_time + 5) do
-      sleep(0.1) until value = yield
-      value
-    end
-  end
-
   before{ login }
   
   it "creates media", js: true do
     visit dashboard_media_index_path
+    expect(page).not_to have_selector("#media_gallery img.img-responsive")
 
     attach_file('media_file', "./spec/support/images/success-kid.jpg")
 
+    expect(page).to have_selector("#media_gallery img.img-responsive") # make capybara wait for upload
     
     media = Storytime::Media.last
-    page.should have_image(media.file_url(:thumb))
+    expect(page).to have_image(media.file_url(:thumb))
   end
 
   it "shows a gallery of the user's images" do

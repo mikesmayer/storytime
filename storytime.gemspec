@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara"
-  s.add_development_dependency "poltergeist", "~>1.5"
+  s.add_development_dependency "poltergeist", "~>1.6"
   s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency "guard-rspec", "~> 4.2.8"
   s.add_development_dependency "spring-commands-rspec"
