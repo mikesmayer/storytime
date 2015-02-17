@@ -18,7 +18,7 @@ ActiveRecord::Migration.maintain_test_schema!
 poltergeist_options = {
   phantomjs_logger: Logger.new('/dev/null'),
   phantomjs_options: ['--proxy-type=socks5', '--proxy=0.0.0.0:0', '--load-images=no', '--ignore-ssl-errors=yes'],
-  js_errors: false,
+  js_errors: false
 }
 
 Capybara.register_driver :poltergeist_st do |app|
